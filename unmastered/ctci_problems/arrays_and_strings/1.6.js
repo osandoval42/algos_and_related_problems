@@ -1,0 +1,3 @@
+function stringCompression(str){
+	
+}
