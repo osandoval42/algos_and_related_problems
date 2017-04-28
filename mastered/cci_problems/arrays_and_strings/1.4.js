@@ -13,3 +13,22 @@ function palindromePermutation(str){ //N time    N space
 
 	return (Object.keys(characterCountIsOdd).length <= 1);
 }
+
+
+//TEST
+let test = "tact coa";
+if (!palindromePermutation(test)){	
+	throw "Failed test 1";
+}
+
+test = "Ossc";
+if (palindromePermutation(test)){
+	throw "Failed test 2";
+}
+
+test = "OsscO";
+if (!palindromePermutation(test)){
+	throw "Failed test 3";
+}
+
+console.log("success");

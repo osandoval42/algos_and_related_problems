@@ -21,3 +21,14 @@ function stringCompression(str){ //N time //N space
 
 	return ((str.length <= result) ? str : result);
 }
+
+let test1 = "aabcccccaaa";
+
+let res = stringCompression(test1)
+if (res !== "a2b1c5a3"){
+	console.error(`${res} !== a2b1c5a3`);
+	console.error(`a2b1c5a3 !== ${res}`);
+	throw "faild test 1";
+}
+
+console.log("success");
