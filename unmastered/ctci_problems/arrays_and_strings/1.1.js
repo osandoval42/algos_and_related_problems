@@ -20,3 +20,34 @@ function isUniqueConstantSpace(str){ //NLog(N)
 	}
 	return true;
 }
+
+
+
+//TESTING
+
+function isUniqueTest(str){
+	let test1 = isUnique(str);
+	let test2 = isUniqueConstantSpace(str);
+	if (test1 !== test2){
+		throw "INCONSISTENT RESULTS";
+	}
+	return test1;
+}
+
+
+let testStr = "abcdll";
+if (isUniqueTest(testStr)){
+	throw "Failed Test 1"
+}
+
+testStr = ""
+if (!isUniqueTest(testStr)){
+	throw "Failed Test 2"
+}
+
+testStr = "AaBbcdEC";
+if (!isUniqueTest(testStr)){
+	throw "Failed Test 3"
+}
+
+console.log("success")

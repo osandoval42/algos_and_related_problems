@@ -2,47 +2,59 @@
 //additionalSpacesNeeded = spaceCount * 2
 //moving from right to left, if char{copy to right additionalSpacedsNeeded} else if space {spacesNeeded -= 2; }
 
-function URLify(str, capacity){ //N
+function URLify(str, length){ //N
 	let chars = str.split("");
-	let additionalSpacedsNeeded = 2 * spaceCount(chars);
-	let hasLeftEmptyCapacity = false;
-	for (let i = capacity - 1; i >= 0; i--){
-		if (hasLeftEmptyCapacity){
-			if (chars[i] === " "){
-				additionalSpacedsNeeded -= 2;
-				addUrlSpace(chars, i, additionalSpacedsNeeded)
-			} else {
-				chars[i + additionalSpacedsNeeded] = chars[i];
-			}			
-		} else {
-			if (chars[i] !== " "){
-				hasLeftEmptyCapacity = true;
-				i++;
+	let additionalSpacesNeeded = 2 * spaceCount(chars, length);
+	for (let i = length - 1; i >= 0; i--){
+		if (chars[i] === " "){
+			additionalSpacesNeeded -= 2;
+			addUrlSpace(chars, i, additionalSpacesNeeded)
+			if (additionalSpacesNeeded === 0){
+				break;
 			}
-		}
+		} else {
+			chars[i + additionalSpacesNeeded] = chars[i];
+		}			
 	}
+	return chars.join('').trim();
 }
 
-function addUrlSpace(chars, i, additionalSpacedsNeeded){
+function addUrlSpace(chars, idx, additionalSpacesNeeded){
 	const map = ['%', '2', '0']
 	for (let i = 0; i < 3; i++){
-		chars[i + additionalSpacesNeeded] = map[i]
+		chars[idx + additionalSpacesNeeded + i] = map[i]
 	}
 }
 
-function spaceCount(chars){
+function spaceCount(chars, length){
 	let spaceCount = 0;
-	let startedCounting = false;
-	for (let i = (chars.length - 1); i >= 0; i--){
-		if (startedCounting){
-			if (chars[i] === " "){
-				spaceCount++;
-			}
-		} else {
-			if (chars[i] !== " "){
-				startedCounting = true;
-			}
+	for (let i = (length - 1); i >= 0; i--){
+		if (chars[i] === " "){
+			spaceCount++;
 		}
 	}
 	return spaceCount;
 }
+
+
+//TEST
+
+let test = {str: "Mr John Smith    ", origLen: 13};
+let res = URLify(test.str, test.origLen)
+if (res !== "Mr%20John%20Smith"){
+	console.error(`Failed test 1 with res === ${res}`)
+	throw "Failed test 1"
+}
+
+test.str = "  Oscar Sandoval      "
+test.origLen = 16;
+if (URLify(test.str, test.origLen) !== "%20%20Oscar%20Sandoval"){
+	throw "Failed test 2"
+}
+
+if (URLify("  ", 0) !== ""){
+	throw "Failed test 3"
+}
+
+console.log("success")
+
