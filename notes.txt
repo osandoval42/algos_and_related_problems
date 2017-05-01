@@ -1,0 +1,29 @@
+Quicksort:
+Pivot is not included in either of 2 new quick sorts
+j increments left until it finds something LESS than
+i increments right until it finds something greater than
+while true with break on j <= i
+Pick pivot by median of first 3
+
+Binary Trees:
+In Order Traversal: what would be in order for binary search tree
+PreOrder Traversal:  Curr Node comes before left, then right
+PostOrder Traversal: Left, right, curr
+CompleteTree:  All depths filled except for bottom right most
+FullTree:  Each node is full or empty (2 or 0)
+
+Heap:
+Min Heap:  Complete Tree where min is the root, and each child is bigger than parent.  Insertion log(n).  Min lookup
+is constant.  Min Deletion is log(n).  
+Max heap: opposite
+
+
+Trie: Nary tree where each node is a character or a TerminatorNode
+
+Graphs:
+Can have directed or undirected edges.
+Can be implemented with ajacency lists in which BFS is efficient, or can be done using adjaceny matrix
+
+
+Bi-directional search:
+2 simulatenous BFS from A and B, cutting time by k^(d/2) where d is children.  When bfs' meet we've found a path.  However its slower if there is no path for obvious reasons
