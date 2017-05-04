@@ -11,6 +11,7 @@ PreOrder Traversal:  Curr Node comes before left, then right
 PostOrder Traversal: Left, right, curr
 CompleteTree:  All depths filled except for bottom right most
 FullTree:  Each node is full or empty (2 or 0)
+EQUAL TO NODE GOES TO THE LEFT
 
 Heap:
 Min Heap:  Complete Tree where min is the root, and each child is bigger than parent.  Insertion log(n).  Min lookup
