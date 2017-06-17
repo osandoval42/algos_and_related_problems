@@ -17,6 +17,7 @@ Heap:
 Min Heap:  Complete Tree where min is the root, and each child is bigger than parent.  Insertion log(n).  Min lookup
 is constant.  Min Deletion is log(n).  
 Max heap: opposite
+2 Operations: extract min/max.  And insert.
 
 
 Trie: Nary tree where each node is a character or a TerminatorNode
@@ -28,3 +29,16 @@ Can be implemented with ajacency lists in which BFS is efficient, or can be done
 
 Bi-directional search:
 2 simulatenous BFS from A and B, cutting time by k^(d/2) where d is children.  When bfs' meet we've found a path.  However its slower if there is no path for obvious reasons
+
+Bit Ops:
+Multiplying by 2 is same as shifting left
+~ negation (bit flipper)
+^ xor (0 if same 1 if different)
+& AND (1s when both were 1s)
+| OR (1s where at least 1)
+>> arithmetic right shift.  Replaces the most significant bit (sign) if it exists with whatever was there before
+>>> logical right shift.  Shifts everything over to the right in normal bit fashion (sign bit will always be 0 for positive)
+
+
+Bits:
+a negative number K is respresented in n bits as (2 ^ n) - k + 1.  In other words, flip Ks bits and add 1 to it.
