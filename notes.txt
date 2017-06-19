@@ -19,6 +19,16 @@ is constant.  Min Deletion is log(n).
 Max heap: opposite
 2 Operations: extract min/max.  And insert.
 
+Heap sort (dont need to know implementation):{
+	1) Turn array into heap ordered
+	2) Sort by extraction from here
+	(only implementation difference is array starts at idx 0 so we must adjust in all of our functions)
+
+	2nlogN worst case, and does it IN PLACE.  As if we had a quick sort with guaranteed random distribution.
+	Instable
+	Poor use of cache memory on bigger arrays
+}
+
 
 Trie: Nary tree where each node is a character or a TerminatorNode
 
@@ -42,3 +52,23 @@ Multiplying by 2 is same as shifting left
 
 Bits:
 a negative number K is respresented in n bits as (2 ^ n) - k + 1.  In other words, flip Ks bits and add 1 to it.
+
+
+LSD:
+2NW guarantee
+Space: N + R
+Stable
+
+
+MSD:
+2NW guarantee
+On random, this is beat by fact once we find draws in a subarray we can stop looking at less significant chars
+CACHE INEFFICIENT 
+Space: N + RD where D is the longest substring tie length (for each depth of recursion we need R)
+Stable
+
+3 way string quick sort:
+Worst case time (wn)logN
+Random: NlogN
+Instable
+space: logN + w
