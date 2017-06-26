@@ -72,3 +72,26 @@ Worst case time (wn)logN
 Random: NlogN
 Instable
 space: logN + w
+
+
+Consistent Hashing:
+Provides horizontal scalability by making only k(keys) / n (nodes) needing to be remapped after a new node is put in.
+It also more randomly distributes the load with virtual replica nodes
+
+2 types of global caches:
+1. Type that fetches data from database when not in cache (preferred so we dont have duplicate cache misses)
+2. Type that says "I dont have data" and tells server to hit DB for it, which then propogates it to cache (good if cache stores large files so that cache buffer isnt overwhelmed in event of many cache misses)
+
+If site is too small to warrant CDN, server static content from separate server with its own domain, so we can simply change the DNS for this name later on if we become big enough for a CDN
+
+3 Cache Invalidation Schemes:
+1.  Write through:  All writes are made to cache and DB.  Ensures consistency, increases latency for writes
+2.	Write around cache:  Only written to DB.  Cache is invalidated.  Increases cache misses
+3.	Write back cache:  Only written to cache.  Updated cache data is periodically written to DB.  Risk of consistency loss, but makes writing super fast.  May be warranted for write heavy apps.
+
+Use a directory server for both horizontal and vertical partitioning
+
+3 Parition Types:
+1. Key or Hash based partitioning
+2. List partitioning
+3. Round Robin partitioning
