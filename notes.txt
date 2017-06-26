@@ -95,3 +95,7 @@ Use a directory server for both horizontal and vertical partitioning
 1. Key or Hash based partitioning
 2. List partitioning
 3. Round Robin partitioning
+
+Dijkstra
+Depends on Priority Queue used.  About ElogV where E is edges and V is nodes
+

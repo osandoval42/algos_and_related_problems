@@ -131,7 +131,7 @@ function dijkstraShortestPaths(minHeapHash){//assumes we receive minHeap with al
 			if (minHeapHash.map[neighbor.key]){
 				thisPathsDistance = min.val + distanceToNeighbor;
 				if (thisPathsDistance < neighbor.val){
-					neighbor.val = thisPathsDistance;
+					minHeapHash.changeVal(neighbor.key, thisPathsDistance);
 					neighbor.parent = min.key;
 				}
 			}
