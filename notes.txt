@@ -73,6 +73,24 @@ Random: NlogN
 Instable
 space: logN + w
 
+Red Black Binary Tree:
+every branch from root to null has same number of black links
+never 2 red links in a row
+therefore height of tree <= 2lgn
+average case for search, insert, and delete is 1logN, worst case 2logn
+
+Ternary Search Trie:
+Essentially as fast as hashing for string keys, and space efficient
+Space: 4N
+time: L + lnN (average for random strings)
+Self balancing exists with L + logN worst case
+Outperforms hashes and red black bst even for non random data
+
+
+Rway Trie:
+space: (R + 1) * N
+time: Linear for hits, sometimes sublinear for misses
+
 
 Consistent Hashing:
 Provides horizontal scalability by making only k(keys) / n (nodes) needing to be remapped after a new node is put in.
@@ -98,4 +116,14 @@ Use a directory server for both horizontal and vertical partitioning
 
 Dijkstra
 Depends on Priority Queue used.  About ElogV where E is edges and V is nodes
+
+System Design Steps:
+1. Clarify requirements
+2. Define API
+3. Back of envelope estimation
+4. Define data model
+5. High Level Design
+6. Detailed Design
+7. Identify and resolve bottleneck
+
 
