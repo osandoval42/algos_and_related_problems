@@ -127,3 +127,6 @@ System Design Steps:
 7. Identify and resolve bottleneck
 
 
+Redis: In general, I am more a friend of Redis than Memcached, because I love the extra database-features of Redis like persistence and the built-in data structures like lists and sets. With Redis and a clever key’ing there may be a chance that you even can get completly rid of a database. But if you just need to cache, take Memcached, because it scales like a charm.
+
+
