@@ -99,7 +99,8 @@ MinHeap.prototype.dequeue = function(node){
 	}
 	this.swap(1, this.length());
 	const min = this.arr.pop();
-	this.swim(this.length());
+	if (this.length() > 1);
+	this.sink(1);
 	return min;
 }
 
@@ -128,7 +129,7 @@ MinHeap.prototype.sink = function(idx){
 			this.arr[smallerChildIdx + 1].val < this.arr[smallerChildIdx].val){
 			smallerChildIdx++;
 		}
-		if (this.arr[idx].val < this.arr[smallerChildIdx].val){
+		if (this.arr[idx].val > this.arr[smallerChildIdx].val){
 			this.swap(idx, smallerChildIdx);
 			idx = smallerChildIdx;
 			smallerChildIdx = this.firstChildIdx(idx);
