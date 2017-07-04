@@ -1,7 +1,7 @@
 Quicksort:
 Pivot is not included in either of 2 new quick sorts
-j increments left until it finds something LESS than
-i increments right until it finds something greater than
+j increments left until it finds something not greater than
+i increments right until it finds something not less than
 while true with break on j <= i
 Pick pivot by median of first 3
 
@@ -28,9 +28,7 @@ Heap sort (dont need to know implementation):{
 	Instable
 	Poor use of cache memory on bigger arrays
 }
-
-
-Trie: Nary tree where each node is a character or a TerminatorNode
+	
 
 Graphs:
 Can have directed or undirected edges.
@@ -130,3 +128,22 @@ System Design Steps:
 Redis: In general, I am more a friend of Redis than Memcached, because I love the extra database-features of Redis like persistence and the built-in data structures like lists and sets. With Redis and a clever key’ing there may be a chance that you even can get completly rid of a database. But if you just need to cache, take Memcached, because it scales like a charm.
 
 Autoscale with amazon's elastic load balancer
+
+
+
+
+
+
+
+
+
+
+
+Questions to ask: 
+https://github.com/appacademy/sf-job-search-curriculum/blob/4d34c0fcaa7a87f4df9d32d88571b5c6851692f6/soft-skills/interviewing/asking-questions.md
+* What are your current priorities and focus areas at Cloudflare?
+* How would you define the culture at Cloudflare? How do you think it fosters talent, helps people grow to the next level and be their best?
+* What more would you like to see from the engineering team at Cloudflare?
+* Can you describe how a product like Universal SSL went from its inception as an idea to shipping it to production?
+* What is the most challenging question about Cloudflare or the market you've been asked in the last 30 days by a candidate, a member of the press, an investor, a customer or an employee?
+* Has your website ever gone down? How did you tackle that challenge and bring it back up? What has been added since then to reduce the risk of letting your website go down?
