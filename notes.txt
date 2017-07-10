@@ -115,6 +115,12 @@ Use a directory server for both horizontal and vertical partitioning
 Dijkstra
 Depends on Priority Queue used.  About ElogV where E is edges and V is nodes
 
+Shortest Path In Edge Weighted Dags 
+In an acyclic, directed graph, we can topologically sort it, then run dijkstra like algorithm on each node in topological order for E + 2V (one of the Vs is the topological sorting).  Can be used for negative weights. This can be used to find longest path in directed acyclic graph (just negate weights and find shortest path).  We use no priority queue since we need not take minimum, just go in topological order.
+
+Queue Based Bellman Ford:
+Requires no negative cycles.  EV worst case.  Typical case is E + V. V Space.
+
 System Design Steps:
 1. Clarify requirements
 2. Define API
@@ -129,6 +135,7 @@ Redis: In general, I am more a friend of Redis than Memcached, because I love th
 
 Autoscale with amazon's elastic load balancer
 
+Use sysbench to benchmark machine
 
 
 
