@@ -89,6 +89,9 @@ Rway Trie:
 space: (R + 1) * N
 time: Linear for hits, sometimes sublinear for misses
 
+Best Trie:
+Rway at first 2 levels, then ternary afterwards.  Beats hashmaps on deduping benchmarks
+
 
 Consistent Hashing:
 Provides horizontal scalability by making only k(keys) / n (nodes) needing to be remapped after a new node is put in.
